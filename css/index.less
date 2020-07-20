@@ -1,0 +1,207 @@
+body {
+    min-width:320px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #f2f4f7;
+}
+a {
+    text-decoration: none;
+    color: #707070;
+}
+@media screen and(min-width:750px){//考虑ipone678plus 414x736的尺寸
+    html {
+        font-size: 37.5px!important;//ipone678的尺寸为375，1rem=37.5刚好把屏幕分成10等分
+    }
+}
+.wrap {
+    background-color: hsl(0, 0%, 100%);
+    padding-bottom: 1.146667rem;//只能给盒子添加内边距，给wrap、go添加外边距均不起效？
+}
+.header {
+    height: 2.133333rem;
+    border-bottom:1px solid #eaeaea;
+    text-align: center;
+    line-height: 2.133333rem;
+    font-size: .933333rem;
+    color: #1c1c1c;
+
+}
+.nav {//nav加外上下内边距，a加外下边距
+    display: flex;//所有的孩子都会在一行上
+    flex-wrap: wrap;//所以此时可以强制换行
+    padding: 1.2rem 0 1.6rem 0;
+    .item {
+        display: flex;
+        width: 33.33%;//每个a都占33.33%
+        flex-direction: column;//竖排显示，为display-flex的属性，所以要给a也设置display
+        align-items: center;//水平居中
+        img {
+            width: 3.706667rem;
+            height: 3.706667rem;
+        }
+        span {
+            font-size: .666667rem;
+            
+        }
+        //选择前三个
+        &:nth-child(-n+3){
+            margin-bottom: 1.653333rem;
+        }
+    }
+    
+}
+.go{
+    margin: 0 .266667rem 0 .48rem;
+}
+.content {
+    padding: 1.066667rem .64rem;
+    background-color: #fff;
+    margin-top: .266667rem;
+    .con-hd {
+        display: flex;
+        justify-content: space-between;//两侧对其
+        height: 1.013333rem;
+        line-height: 1.013333rem;
+        h4 {
+            margin: 0;
+            font-size: .746667rem;
+            color: #333333;
+            .icon {
+                display: inline-block;
+                width: 1.013333rem;
+                height: 1.013333rem;
+                vertical-align: middle;//实现行内块与文字垂直居中,若不加，默认为基线对齐
+            }
+        }
+        .more {
+            font-size: .586667rem;
+            color: #999999;
+        }
+    
+    }
+}
+.get_job_focus {
+    position: relative;//子（箭头）绝父相
+    .swiper-container {
+        //width: 100%;
+        height: 100%;
+        width: 14.4rem;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        margin-top: .906667rem;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;//默认一行显示
+        flex-direction: column;//竖向显示
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+        opacity: 0.4;
+        a {
+            width: 9.013333rem;
+            height: 10.026667rem;
+            img {
+                width:100%;
+                height: 100%;
+            }   
+        }
+        p {
+            width: 9.013333rem;
+            font-size: .666667rem;
+            margin-top: .64rem;
+            color: #333333;
+        }
+      }
+      //当前即中间的图片大小为1旁边的为0.8（见109行）
+      .swiper-slide-active,.swiper-slide-duplicate-active{
+        transform: scale(1);
+        z-index: 999; //层级设高，使其压住别的图片
+        opacity: 1;//盒子的透明度
+      }
+      .swiper-button-next,
+      .swiper-button-prev{
+          width: .613333rem;
+          height: 1.146667rem;
+          outline: none;
+          &::after {
+              font-size: 1.066667rem;
+              color: #333;
+          }
+      }
+}
+.study_con {
+    padding-bottom: 3.733333rem;
+  }
+.study {
+    
+   .study_fo {
+       padding-top: 1.04rem;
+   }
+    .swiper-slide {
+       
+        font-size: 18px;
+        background: #fff;
+        width: 7.733333rem;
+        height: 9.066667rem;
+        background-color: #fff;
+        border-radius: .266667rem;
+        box-shadow: 0 0px 10px rgba(0,0,0,0.1);
+  h5 {
+      font-size: .8rem;
+      margin: .533333rem 0;
+      font-weight: 400;
+      padding: 0 .266667rem;
+  }
+  p {
+        font-size: .693333rem;
+        color: #ff4400;
+        padding-left: .533333rem;
+  }
+       
+      }
+}
+.footer {
+            position: fixed;
+            left:0;
+            bottom: 0;
+            height: 2.933333rem;
+            width: 100%;
+            background-color:#fff;
+            z-index: 999;
+            display: flex;
+            padding: .533333rem;
+            border-top: 1px solid #ccc;
+.item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 1.04rem;
+        height: 1.093333rem;
+    }
+    p {
+        font-size: .586667rem;
+        color: #52C4F0;
+        margin-top: .266667rem;
+    }
+}
+
+}
